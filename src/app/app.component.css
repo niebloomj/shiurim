@@ -1,0 +1,5 @@
+.cal-week-view .cal-time-events .cal-event {
+  margin: 1px;
+  padding: 0 5px;
+  line-height: 0;
+}

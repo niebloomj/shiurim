@@ -1,11 +1,41 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.6.1/fullcalendar.min.css">
 
 <div style="text-align:center">
   <h1>
     Chabad of Park Heights Local Shiurim!
   </h1>
 </div>
-
-<div id="calendar"></div>
-
+<ng-template
+  #test
+  let-weekEvent="weekEvent"
+  let-tooltipPlacement="tooltipPlacement"
+  let-eventClicked="eventClicked"
+  let-tooltipTemplate="tooltipTemplate"
+  let-tooltipAppendToBody="tooltipAppendToBody">
+  <div
+    class="cal-event"
+    [style.backgroundColor]="weekEvent.event.color.primary"
+    [style.color]="weekEvent.event.color.secondary"
+    [mwlCalendarTooltip]="weekEvent.event.title | calendarEventTitle:'weekTooltip':weekEvent.event"
+    [tooltipPlacement]="tooltipPlacement"
+    [tooltipEvent]="weekEvent.event"
+    [tooltipTemplate]="tooltipTemplate"
+    [tooltipAppendToBody]="tooltipAppendToBody" style="line-height: 14px">
+    {{moment(weekEvent.event.start).format("H:mm")}}-{{moment(weekEvent.event.end).format("H:mm")}}
+    <br>
+    <mwl-calendar-event-title style="font-size: 11pt; white-space: normal;"
+                              [event]="weekEvent.event" view="week">
+    </mwl-calendar-event-title>
+  </div>
+</ng-template>
+<div>
+  <mwl-calendar-week-view
+    [viewDate]="viewDate"
+    [events]="calendarEvents"
+    [dayEndHour]="23"
+    [dayStartHour]="5"
+    [eventTemplate]="test"
+    (beforeViewRender)="updateCalendarEvents($event)"
+  >
+  </mwl-calendar-week-view>
+</div>
