@@ -20,10 +20,10 @@
     [tooltipPlacement]="tooltipPlacement"
     [tooltipEvent]="weekEvent.event"
     [tooltipTemplate]="tooltipTemplate"
-    [tooltipAppendToBody]="tooltipAppendToBody" style="line-height: 14px">
-    {{moment(weekEvent.event.start).format("H:mm")}}-{{moment(weekEvent.event.end).format("H:mm")}}
+    [tooltipAppendToBody]="tooltipAppendToBody" style="font-size: 9pt; line-height: 14px; white-space: normal;">
+    {{moment(weekEvent.event.start).format("h:mm")}}-{{moment(weekEvent.event.end).format("h:mma")}}
     <br>
-    <mwl-calendar-event-title style="font-size: 11pt; white-space: normal;"
+    <mwl-calendar-event-title style="font-size: 11pt;"
                               [event]="weekEvent.event" view="week">
     </mwl-calendar-event-title>
   </div>

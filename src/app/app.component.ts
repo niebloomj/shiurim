@@ -43,7 +43,7 @@ export class AppComponent {
   viewDate: Date = new Date();
   recurringEvents: RecurringEvent[] = [
     {
-      title: 'Gemara, R. Lisbon',
+      title: 'Gemara, R. Lisbon @ BL',
       color: colors.blue,
       start: 60 * 5 + 50,
       end: 60 * 6 + 30,
@@ -53,7 +53,7 @@ export class AppComponent {
       },
     },
     {
-      title: 'Gemara, R. Lisbon',
+      title: 'Gemara, R. Lisbon @ BL',
       color: colors.blue,
       start: 60 * 6 + 50,
       end: 60 * 7 + 30,
@@ -103,7 +103,7 @@ export class AppComponent {
       },
     },
     {
-      title: 'Shir and Beer, R. Raices',
+      title: 'Shir and Beer, R. Raices @ 6912 Dorset Pl',
       color: colors.blue,
       start: 60 * 21 + 15,
       end: 60 * 22 + 30,
@@ -113,7 +113,7 @@ export class AppComponent {
       },
     },
     {
-      title: 'Kolel Erev, YOUng Anash',
+      title: 'Kolel Erev @ YOUng Anash',
       color: colors.blue,
       start: 60 * 21,
       end: 60 * 22,
@@ -160,6 +160,16 @@ export class AppComponent {
       rrule: {
         freq: RRule.WEEKLY,
         byweekday: [RRule.SA]
+      },
+    },
+    {
+      title: 'Tehilim @ Weintraubs',
+      color: colors.blue,
+      start: 60 * 10 + 30,
+      end: 60 * 11 + 30,
+      rrule: {
+        freq: RRule.WEEKLY,
+        byweekday: [RRule.SU]
       },
     },
   ];
