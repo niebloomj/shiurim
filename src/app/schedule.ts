@@ -120,7 +120,7 @@ export const recurringEvents: RecurringEvent[] = [
     },
   },
   {
-    title: 'Lady’s Chassidus, R. Lisbon',
+    title: 'Lady’s Chassidus, R. Lisbon @ BL',
     color: colors.red,
     start: 60 * 13,
     end: 60 * 14,
@@ -130,7 +130,7 @@ export const recurringEvents: RecurringEvent[] = [
     },
   },
   {
-    title: 'Lady’s Tanya, R. Lisbon',
+    title: 'Lady’s Tanya, R. Lisbon @ BL',
     color: colors.red,
     start: 60 * 19 + 30,
     end: 60 * 20 + 30,
@@ -140,7 +140,7 @@ export const recurringEvents: RecurringEvent[] = [
     },
   },
   {
-    title: 'Chassidus, R. Lisbon',
+    title: 'Chassidus, R. Lisbon @ BL',
     color: colors.blue,
     start: 60 * 8 + 45,
     end: 60 * 9 + 30,
@@ -157,6 +157,16 @@ export const recurringEvents: RecurringEvent[] = [
     rrule: {
       freq: RRule.WEEKLY,
       byweekday: [RRule.SU]
+    },
+  },
+  {
+    title: 'Boys learning w/ pizza, stories, and prizes @ BL',
+    color: colors.blue,
+    start: 60 * 19 + 15,
+    end: 60 * 20,
+    rrule: {
+      freq: RRule.WEEKLY,
+      byweekday: [RRule.SA]
     },
   },
 ];
