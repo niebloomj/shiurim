@@ -28,12 +28,14 @@ const colors: any = {
   }
 };
 
+const time = (h, m = 0) => 60 * h + m;
+
 export const recurringEvents: RecurringEvent[] = [
   {
     title: 'Gemara, R. Lisbon @ BL',
     color: colors.blue,
-    start: 60 * 5 + 50,
-    end: 60 * 6 + 30,
+    start: time(5, 50),
+    end: time(6, 30),
     rrule: {
       freq: RRule.WEEKLY,
       byweekday: [RRule.MO, RRule.TU, RRule.WE, RRule.TH, RRule.FR]
@@ -42,8 +44,8 @@ export const recurringEvents: RecurringEvent[] = [
   {
     title: 'Gemara, R. Lisbon @ BL',
     color: colors.blue,
-    start: 60 * 6 + 50,
-    end: 60 * 7 + 30,
+    start: time(6, 50),
+    end: time(7, 30),
     rrule: {
       freq: RRule.WEEKLY,
       byweekday: [RRule.SU]
@@ -52,8 +54,8 @@ export const recurringEvents: RecurringEvent[] = [
   {
     title: 'Gemara, R. Shaffer',
     color: colors.blue,
-    start: 60 * 18 + 0,
-    end: 60 * 19 + 0,
+    start: time(18, 0),
+    end: time(19, 0),
     rrule: {
       freq: RRule.WEEKLY,
       byweekday: [RRule.SU]
@@ -62,8 +64,8 @@ export const recurringEvents: RecurringEvent[] = [
   {
     title: 'Gemara, R. Shaffer',
     color: colors.blue,
-    start: 60 * 19,
-    end: 60 * 20,
+    start: time(19),
+    end: time(20),
     rrule: {
       freq: RRule.WEEKLY,
       byweekday: [RRule.TU]
@@ -72,8 +74,8 @@ export const recurringEvents: RecurringEvent[] = [
   {
     title: 'Samech Vav, R. Avraham Levitan',
     color: colors.blue,
-    start: 60 * 20 + 30,
-    end: 60 * 21 + 30,
+    start: time(20, 30),
+    end: time(21, 30),
     rrule: {
       freq: RRule.WEEKLY,
       byweekday: [RRule.SU]
@@ -82,18 +84,18 @@ export const recurringEvents: RecurringEvent[] = [
   {
     title: 'Understanding Tefillah, Slavatiscki',
     color: colors.blue,
-    start: 60 * 21 + 15,
-    end: 60 * 22 + 15,
+    start: time(21, 15),
+    end: time(22, 15),
     rrule: {
       freq: RRule.WEEKLY,
       byweekday: [RRule.MO]
     },
   },
   {
-    title: 'Shir and Beer, R. Raices @ 6912 Dorset Pl',
+    title: 'Shiur and Biur, R. Raices @ 6912 Dorset Pl',
     color: colors.blue,
-    start: 60 * 21 + 15,
-    end: 60 * 22 + 30,
+    start: time(21, 15),
+    end: time(22, 30),
     rrule: {
       freq: RRule.WEEKLY,
       byweekday: [RRule.WE]
@@ -102,8 +104,8 @@ export const recurringEvents: RecurringEvent[] = [
   {
     title: 'Kolel Erev @ YOUng Anash',
     color: colors.blue,
-    start: 60 * 21,
-    end: 60 * 22,
+    start: time(21),
+    end: time(22),
     rrule: {
       freq: RRule.WEEKLY,
       byweekday: [RRule.TH]
@@ -112,8 +114,8 @@ export const recurringEvents: RecurringEvent[] = [
   {
     title: 'Ayin Beis, R. Kaplan',
     color: colors.blue,
-    start: 60 * 21,
-    end: 60 * 22,
+    start: time(21),
+    end: time(22),
     rrule: {
       freq: RRule.WEEKLY,
       byweekday: [RRule.SA]
@@ -122,8 +124,8 @@ export const recurringEvents: RecurringEvent[] = [
   {
     title: 'Lady’s Chassidus, R. Lisbon @ BL',
     color: colors.red,
-    start: 60 * 13,
-    end: 60 * 14,
+    start: time(13),
+    end: time(14),
     rrule: {
       freq: RRule.WEEKLY,
       byweekday: [RRule.MO]
@@ -132,8 +134,8 @@ export const recurringEvents: RecurringEvent[] = [
   {
     title: 'Lady’s Tanya, R. Lisbon @ BL',
     color: colors.red,
-    start: 60 * 19 + 30,
-    end: 60 * 20 + 30,
+    start: time(19, 30),
+    end: time(20, 30),
     rrule: {
       freq: RRule.WEEKLY,
       byweekday: [RRule.WE]
@@ -142,8 +144,8 @@ export const recurringEvents: RecurringEvent[] = [
   {
     title: 'Chassidus, R. Lisbon @ BL',
     color: colors.blue,
-    start: 60 * 8 + 45,
-    end: 60 * 9 + 30,
+    start: time(8, 45),
+    end: time(9, 30),
     rrule: {
       freq: RRule.WEEKLY,
       byweekday: [RRule.SA]
@@ -151,9 +153,9 @@ export const recurringEvents: RecurringEvent[] = [
   },
   {
     title: 'Tehilim @ Weintraubs',
-    color: colors.blue,
-    start: 60 * 10 + 30,
-    end: 60 * 11 + 30,
+    color: colors.red,
+    start: time(10, 30),
+    end: time(11, 30),
     rrule: {
       freq: RRule.WEEKLY,
       byweekday: [RRule.SU]
@@ -162,11 +164,21 @@ export const recurringEvents: RecurringEvent[] = [
   {
     title: 'Boys learning w/ pizza, stories, and prizes @ BL',
     color: colors.blue,
-    start: 60 * 19 + 15,
-    end: 60 * 20,
+    start: time(19, 15),
+    end: time(20),
     rrule: {
       freq: RRule.WEEKLY,
       byweekday: [RRule.SA]
+    },
+  },
+  {
+    title: 'Chassidus, R. Klyne @ BL',
+    color: colors.blue,
+    start: time(22, 30),
+    end: time(23, 30),
+    rrule: {
+      freq: RRule.WEEKLY,
+      byweekday: [RRule.TH]
     },
   },
 ];
