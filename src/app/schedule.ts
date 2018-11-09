@@ -52,17 +52,17 @@ export const recurringEvents: RecurringEvent[] = [
     },
   },
   {
-    title: 'Gemara, R. Shaffer',
+    title: 'Gemara, R. Shaffer @ BL',
     color: colors.blue,
-    start: time(18, 0),
-    end: time(19, 0),
+    start: time(10, 30),
+    end: time(11, 30),
     rrule: {
       freq: RRule.WEEKLY,
       byweekday: [RRule.SU]
     },
   },
   {
-    title: 'Gemara, R. Shaffer',
+    title: 'Gemara, R. Shaffer @ TBD',
     color: colors.blue,
     start: time(19),
     end: time(20),
@@ -112,7 +112,7 @@ export const recurringEvents: RecurringEvent[] = [
     },
   },
   {
-    title: 'Ayin Beis, R. Kaplan',
+    title: 'Ayin Beis, R. Kaplan @ 6701 Old Pimlico Road',
     color: colors.blue,
     start: time(21),
     end: time(22),
