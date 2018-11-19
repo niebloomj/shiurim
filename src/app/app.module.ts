@@ -2,10 +2,12 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {MatButtonModule} from '@angular/material/button';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+
 import {CalendarDateFormatter, CalendarModule, CalendarMomentDateFormatter, DateAdapter, MOMENT} from 'angular-calendar';
 import moment from 'moment-timezone';
 import {adapterFactory} from 'angular-calendar/date-adapters/moment';
-import {CommonModule} from '@angular/common';
 
 export function momentAdapterFactory() {
   return adapterFactory(moment);
@@ -18,7 +20,8 @@ export function momentAdapterFactory() {
   imports: [
     NgbModule,
     BrowserModule,
-    CommonModule,
+    MatButtonModule,
+    MatButtonToggleModule,
     CalendarModule.forRoot(
       {
         provide: DateAdapter,

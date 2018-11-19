@@ -1,5 +1,5 @@
-import {ChangeDetectionStrategy, ChangeDetectorRef, Component} from '@angular/core';
-import {CalendarEvent, CalendarWeekViewBeforeRenderEvent} from 'angular-calendar';
+import {AfterContentChecked, AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component} from '@angular/core';
+import {CalendarEvent, CalendarView, CalendarWeekViewBeforeRenderEvent} from 'angular-calendar';
 import {ViewPeriod} from 'calendar-utils';
 import moment from 'moment-timezone';
 import {RRule} from 'rrule';
@@ -9,11 +9,17 @@ moment.tz.setDefault('est');
 
 @Component({
   selector: 'app-root',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './app.component.html',
   styleUrls: ['app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
+
+  MOBILE_MAX_WIDTH = 600;
+
+  view = CalendarView.Week;
+
+  CalendarView = CalendarView;
+
   viewDate: Date = new Date();
 
   recurringEvents = recurringEvents;
@@ -49,7 +55,6 @@ export class AppComponent {
         });
         const {title, color} = event;
         rule.all().forEach(date => {
-          console.log(moment(moment(date).add(event.start, 'minutes').toDate()).format('H:mm'));
           this.calendarEvents.push({
             title,
             color,
@@ -64,5 +69,11 @@ export class AppComponent {
 
   moment(test) {
     return moment(test);
+  }
+
+  ngAfterViewInit(): void {
+    if (window.innerWidth < this.MOBILE_MAX_WIDTH) {
+      this.view = CalendarView.Day;
+    }
   }
 }

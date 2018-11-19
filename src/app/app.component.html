@@ -20,7 +20,7 @@
     [tooltipPlacement]="tooltipPlacement"
     [tooltipEvent]="weekEvent.event"
     [tooltipTemplate]="tooltipTemplate"
-    [tooltipAppendToBody]="tooltipAppendToBody" style="font-size: 9pt; line-height: 14px; white-space: normal;">
+    [tooltipAppendToBody]="tooltipAppendToBody" style="font-size: 8pt; line-height: 14px; white-space: normal;">
     {{moment(weekEvent.event.start).format("h:mm")}}-{{moment(weekEvent.event.end).format("h:mma")}}
     <br>
     <mwl-calendar-event-title style="font-size: 11pt;"
@@ -28,13 +28,63 @@
     </mwl-calendar-event-title>
   </div>
 </ng-template>
-<div>
+
+<div style="text-align: center">
+  <b>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</b>
+</div>
+
+<div class="container">
+  <div class="row">
+    <mat-button-toggle-group>
+      <mat-button-toggle mwlCalendarPreviousView
+                         [view]="view"
+                         [(viewDate)]="viewDate">
+        Previous
+      </mat-button-toggle>
+      <mat-button-toggle mwlCalendarToday
+                         [(viewDate)]="viewDate"
+      >
+        Today
+      </mat-button-toggle>
+      <mat-button-toggle mwlCalendarNextView
+                         [view]="view"
+                         [(viewDate)]="viewDate"
+      >
+        Next
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+    <mat-button-toggle-group style="float: right">
+      <mat-button-toggle
+        [checked]="view === CalendarView.Week"
+        (click)="view = CalendarView.Week">
+        Week
+      </mat-button-toggle>
+      <mat-button-toggle
+        [checked]="view === CalendarView.Day"
+        (click)="view = CalendarView.Day">
+        Day
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+</div>
+<br>
+<div [ngSwitch]="view">
   <mwl-calendar-week-view
+    *ngSwitchCase="'week'"
     [viewDate]="viewDate"
     [events]="calendarEvents"
     [dayEndHour]="23"
-    [dayStartHour]="5"
+    [dayStartHour]="6"
+    [dayEndMinute]="30"
+    [hourSegmentHeight]="45"
     [eventTemplate]="test"
     (beforeViewRender)="updateCalendarEvents($event)">
   </mwl-calendar-week-view>
+  <mwl-calendar-day-view
+    *ngSwitchCase="'day'"
+    [viewDate]="viewDate"
+    [events]="calendarEvents"
+    (beforeViewRender)="updateCalendarEvents($event)"
+  >
+  </mwl-calendar-day-view>
 </div>

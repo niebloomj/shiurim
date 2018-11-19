@@ -38,7 +38,10 @@ export const recurringEvents: RecurringEvent[] = [
     end: time(6, 30),
     rrule: {
       freq: RRule.WEEKLY,
-      byweekday: [RRule.MO, RRule.TU, RRule.WE, RRule.TH, RRule.FR]
+      byweekday: [
+        RRule.MO, RRule.TU, RRule.WE,
+        RRule.TH, RRule.FR
+      ]
     },
   },
   {
@@ -162,7 +165,8 @@ export const recurringEvents: RecurringEvent[] = [
     },
   },
   {
-    title: 'Boys learning w/ pizza, stories, and prizes @ BL',
+    title: 'Boys learning w/ pizza, stories, ' +
+      'and prizes @ BL',
     color: colors.blue,
     start: time(19, 15),
     end: time(20),
@@ -179,6 +183,19 @@ export const recurringEvents: RecurringEvent[] = [
     rrule: {
       freq: RRule.WEEKLY,
       byweekday: [RRule.TH]
+    },
+  },
+  {
+    title: 'Amud Yomi, R. Levin @ YOUng Anash',
+    color: colors.blue,
+    start: time(20, 30),
+    end: time(21),
+    rrule: {
+      freq: RRule.WEEKLY,
+      byweekday: [
+        RRule.SU, RRule.MO, RRule.TU,
+        RRule.WE, RRule.TH, RRule.SA
+      ]
     },
   },
 ];
