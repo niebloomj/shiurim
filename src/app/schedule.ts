@@ -43,8 +43,7 @@ export const recurringEvents: RecurringEvent[] = [
         RRule.TH, RRule.FR
       ]
     },
-  },
-  {
+  }, {
     title: 'Gemara, R. Lisbon @ BL',
     color: colors.blue,
     start: time(6, 50),
@@ -53,8 +52,7 @@ export const recurringEvents: RecurringEvent[] = [
       freq: RRule.WEEKLY,
       byweekday: [RRule.SU]
     },
-  },
-  {
+  }, {
     title: 'Gemara, R. Shaffer @ BL',
     color: colors.blue,
     start: time(10, 30),
@@ -63,8 +61,7 @@ export const recurringEvents: RecurringEvent[] = [
       freq: RRule.WEEKLY,
       byweekday: [RRule.SU]
     },
-  },
-  {
+  }, {
     title: 'Gemara, R. Shaffer @ TBD',
     color: colors.blue,
     start: time(19),
@@ -73,8 +70,7 @@ export const recurringEvents: RecurringEvent[] = [
       freq: RRule.WEEKLY,
       byweekday: [RRule.TU]
     },
-  },
-  {
+  }, {
     title: 'Samech Vav, R. Avraham Levitan',
     color: colors.blue,
     start: time(20, 30),
@@ -83,8 +79,7 @@ export const recurringEvents: RecurringEvent[] = [
       freq: RRule.WEEKLY,
       byweekday: [RRule.SU]
     },
-  },
-  {
+  }, {
     title: 'Understanding Tefillah, Slavatiscki',
     color: colors.blue,
     start: time(21, 15),
@@ -93,8 +88,7 @@ export const recurringEvents: RecurringEvent[] = [
       freq: RRule.WEEKLY,
       byweekday: [RRule.MO]
     },
-  },
-  {
+  }, {
     title: 'Shiur and Biur, R. Raices @ 6912 Dorset Pl',
     color: colors.blue,
     start: time(21, 15),
@@ -103,8 +97,7 @@ export const recurringEvents: RecurringEvent[] = [
       freq: RRule.WEEKLY,
       byweekday: [RRule.WE]
     },
-  },
-  {
+  }, {
     title: 'Kolel Erev @ YOUng Anash',
     color: colors.blue,
     start: time(21),
@@ -113,8 +106,7 @@ export const recurringEvents: RecurringEvent[] = [
       freq: RRule.WEEKLY,
       byweekday: [RRule.TH]
     },
-  },
-  {
+  }, {
     title: 'Ayin Beis, R. Kaplan @ 6701 Old Pimlico Road',
     color: colors.blue,
     start: time(21),
@@ -123,8 +115,7 @@ export const recurringEvents: RecurringEvent[] = [
       freq: RRule.WEEKLY,
       byweekday: [RRule.SA]
     },
-  },
-  {
+  }, {
     title: 'Lady’s Chassidus, R. Lisbon @ BL',
     color: colors.red,
     start: time(13),
@@ -133,8 +124,7 @@ export const recurringEvents: RecurringEvent[] = [
       freq: RRule.WEEKLY,
       byweekday: [RRule.MO]
     },
-  },
-  {
+  }, {
     title: 'Lady’s Tanya, R. Lisbon @ BL',
     color: colors.red,
     start: time(19, 30),
@@ -143,8 +133,7 @@ export const recurringEvents: RecurringEvent[] = [
       freq: RRule.WEEKLY,
       byweekday: [RRule.WE]
     },
-  },
-  {
+  }, {
     title: 'Chassidus, R. Lisbon @ BL',
     color: colors.blue,
     start: time(8, 45),
@@ -153,8 +142,7 @@ export const recurringEvents: RecurringEvent[] = [
       freq: RRule.WEEKLY,
       byweekday: [RRule.SA]
     },
-  },
-  {
+  }, {
     title: 'Tehilim @ Weintraubs',
     color: colors.red,
     start: time(10, 30),
@@ -163,8 +151,7 @@ export const recurringEvents: RecurringEvent[] = [
       freq: RRule.WEEKLY,
       byweekday: [RRule.SU]
     },
-  },
-  {
+  }, {
     title: 'Boys learning w/ pizza, stories, ' +
       'and prizes @ BL',
     color: colors.blue,
@@ -174,8 +161,7 @@ export const recurringEvents: RecurringEvent[] = [
       freq: RRule.WEEKLY,
       byweekday: [RRule.SA]
     },
-  },
-  {
+  }, {
     title: 'Chassidus, R. Klyne @ BL',
     color: colors.blue,
     start: time(22, 30),
@@ -184,8 +170,7 @@ export const recurringEvents: RecurringEvent[] = [
       freq: RRule.WEEKLY,
       byweekday: [RRule.TH]
     },
-  },
-  {
+  }, {
     title: 'Amud Yomi, R. Levin @ YOUng Anash',
     color: colors.blue,
     start: time(20, 30),
@@ -195,6 +180,29 @@ export const recurringEvents: RecurringEvent[] = [
       byweekday: [
         RRule.SU, RRule.MO, RRule.TU,
         RRule.WE, RRule.TH, RRule.SA
+      ]
+    },
+  }, {
+    title: 'Chassidus, R. Lisbon @ BL',
+    color: colors.blue,
+    start: time(7, 30),
+    end: time(8),
+    rrule: {
+      freq: RRule.WEEKLY,
+      byweekday: [
+        RRule.MO, RRule.TU,
+        RRule.WE, RRule.TH, RRule.FR
+      ]
+    },
+  }, {
+    title: 'Chassidus, R. Lisbon @ BL',
+    color: colors.blue,
+    start: time(8, 30),
+    end: time(9),
+    rrule: {
+      freq: RRule.WEEKLY,
+      byweekday: [
+        RRule.SU
       ]
     },
   },
