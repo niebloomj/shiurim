@@ -1,4 +1,4 @@
-import RRule from 'rrule/dist/esm/rrule';
+import {RRule} from 'rrule';
 
 interface RecurringEvent {
   title: string;
@@ -173,13 +173,36 @@ export const recurringEvents: RecurringEvent[] = [
   }, {
     title: 'Amud Yomi, R. Levin @ YOUng Anash',
     color: colors.blue,
+    start: time(20, 45),
+    end: time(21, 15),
+    rrule: {
+      freq: RRule.WEEKLY,
+      byweekday: [
+        RRule.SU, RRule.MO, RRule.TU,
+        RRule.WE, RRule.TH
+      ]
+    },
+  }, {
+    title: 'Amud Yomi, R. Levin @ YOUng Anash',
+    color: colors.blue,
     start: time(20, 30),
     end: time(21),
     rrule: {
       freq: RRule.WEEKLY,
       byweekday: [
+        RRule.SA
+      ]
+    },
+  }, {
+    title: `Rebbe's Maamorim @ YOUng Anash`,
+    color: colors.blue,
+    start: time(20, 15),
+    end: time(20, 45),
+    rrule: {
+      freq: RRule.WEEKLY,
+      byweekday: [
         RRule.SU, RRule.MO, RRule.TU,
-        RRule.WE, RRule.TH, RRule.SA
+        RRule.WE, RRule.TH
       ]
     },
   }, {
